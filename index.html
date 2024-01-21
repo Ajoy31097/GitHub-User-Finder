@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Finder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    <script src="https://kit.fontawesome.com/7d44483cd6.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="displayBlock">
+            <h1 style="color: rgb(32, 204, 178); text-decoration: underline;"><i class="fa-brands fa-github"></i> GitHub User Finder</h1>
+            
+            <br>
+            
+            <input type="text" class="form-control form-control-lg w-200 shadow p-3 mb-5 bg-body-tertiary rounded" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="username" id="username" placeholder="Enter Username..." autocomplete="off"> 
+            
+            <button class="button" type="submit" onclick="getDetails()">
+                Search
+            </button>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        function getDetails() {
+            const usernameInput = document.getElementById('username');
+            const username = usernameInput.value.trim();
+
+            if (username === '') {
+                alert('Please enter a GitHub username.');
+                return;
+            }
+            const url = `main.html?username=${encodeURIComponent(username)}`;
+            window.location.href = url;
+        }
+    </script>
+    
+
+</body>
+</html>
